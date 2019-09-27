@@ -3,8 +3,9 @@ const app = module.exports = new Koa();
 
 app.use(async function(ctx) {
   console.log('url:', ctx.url)
-  console.log('  method:', ctx.method)
-  console.log('  headers:', ctx.headers)
+  //console.log('  method:', ctx.method)
+  //console.log('  headers:', ctx.headers)
+  ctx.type = 'text/html'
   ctx.body = 'Hello World';
 });
 

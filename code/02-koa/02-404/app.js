@@ -9,3 +9,4 @@ app.use(async function pageNotFound(ctx) {
 });
 
 if (!module.parent) app.listen(3000);
+//只要主程式才要listen
