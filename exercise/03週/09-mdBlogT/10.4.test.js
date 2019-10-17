@@ -73,7 +73,7 @@ function layout (path, html) {
   <a href="${path}?op=edit"></a>
   <a href="${path}?op=edit">Edit</a> /
   <a href="${path}?op=tw2cn">简体</a> /
-  <a href="${path}?op="cn2tw">繁體</a>
+  <a href="${path}?op=cn2tw">繁體</a>
   </header>
   <div class="main">
     <div class="content">
