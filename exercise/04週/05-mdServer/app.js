@@ -16,8 +16,7 @@ app.use(async function(ctx) {
     // console.log('ext=', ext)
     if (ext === '.md') {
       let md = await fs.promises.readFile(fpath, 'utf8')
-      let html = mdRender(md)         //本來用markdown-it轉換掉，可是這樣就會沒頭沒尾
-      //所以現在把它改成用一個函數mdserver
+      let html = mdit.render(md)
       ctx.type = '.html'
       ctx.body = html
     } else {
@@ -30,17 +29,4 @@ app.use(async function(ctx) {
 if (!module.parent) {
   app.listen(3000)
   console.log('server run at http://localhost:3000/')
-}
-
-function mdRender(md) {
-  return `
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="theme.css">
-</head>
-<body>
-  ${mdit.render(md)}
-</body>
-</html>
-  `
 }
