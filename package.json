@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/sps326532/ws108a#readme",
   "dependencies": {
+    "blog6": "^1.0.2",
     "koa": "^2.8.2"
   }
 }

@@ -18,11 +18,12 @@ app.use(async function (ctx) {
     let ext = extname(fpath)
     if (ext === '.md') {
       let md = await fs.promises.readFile(fpath, 'utf8')
-      let op = ctx.query.op
+      let op = ctx.query.op     //這章節多在一個op運算 
       ctx.type = '.html'
-      switch (op) {
-        case 'edit': ctx.body = mdEdit(md, ctx.path); break
-        case 'save':
+      switch (op) {         //處理編輯跟處存的地方
+        case 'edit': ctx.body = mdEdit(md, ctx.path); break  //如果在edit可以編輯就是用後面的函數寫
+        case 'save':        //他邊完就是要存，在網頁裡按下存後會送一個op=save網址給他
+        //儲存完後，會把網頁上編輯裡面的文字附上去給他，附在pos訊息
           let mdText = ctx.request.body.mdText
           await fs.promises.writeFile(fpath, mdText)
           ctx.redirect(ctx.path)
@@ -60,6 +61,8 @@ function mdRender (md, path) {
   ${mdit.render(md)}
   `)
 }
+
+//mdit.render(md)，是轉檔
 
 function mdEdit (md, path) {
   return layout(`
