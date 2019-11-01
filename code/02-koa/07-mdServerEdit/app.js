@@ -8,7 +8,7 @@ const app = module.exports = new Koa()
 const path = require('path')
 const extname = path.extname
 
-app.use(koaBody({ jsonLimit: '1kb' }))
+app.use(koaBody({ jsonLimit: '1kb' }))   //app.use koaBody時候，可以透過.body.神魔的取得那個欄位
 
 app.use(async function (ctx) {
   const fpath = path.join(__dirname, ctx.path)
