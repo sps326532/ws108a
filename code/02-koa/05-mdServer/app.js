@@ -8,7 +8,7 @@ const path = require('path')
 
 app.use(async function(ctx) {
   const fpath = path.join(__dirname, ctx.path)      //取得檔案狀態
-  const fstat = await fs.promises.stat(fpath)
+  const fstat = await fs.promises.stat(fpath)       //讀取檔案狀態，放在fstat
   console.log('fpath=', fpath)
   if (fstat.isFile()) {                             //有了檔案狀態就可以判斷是不是一個檔案
     let ext = path.extname(fpath)                   //如果他是markdown-it我就轉成html

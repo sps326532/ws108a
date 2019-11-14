@@ -8,8 +8,8 @@ const app = module.exports = new Koa()
 const router = new KoaRouter()
 
 router
-.get('/', async (ctx) => {
-  ctx.redirect('/blog/Home.md')    //redirect，我現在雖然是更目錄，但我現在不想再更目錄我想要去別的地方
+.get('/', async (ctx) => {        //router接到一個更目錄請求的時候，我就把他轉到blog/Home.md上面去
+  ctx.redirect('/blog/Home.md')    //redirect=我現在雖然是更目錄，但我現在不想再更目錄我想要去別的地方
 })
 .get('/blog/:file', async (ctx) => { // 處理 GET 顯示檔案的請求
   let file = ctx.params.file // 取得 param 中的 file 參數

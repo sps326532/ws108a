@@ -1,12 +1,12 @@
-x = 3
+x = 3   //創造一個全域變數，宣告變數
 
-let y = 5
+let y = 5  //
 
 const z = 8
 
-const o = {a:3, b:4}
+const o = {a:3, b:4}    //
 
-var x = 5
+var x = 5       
 
 y = 6
 

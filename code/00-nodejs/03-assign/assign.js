@@ -1,8 +1,8 @@
-let a = 3, b = 4
+let a = 3, b = 4     
 
-let o = {a, b}
+let o = {a, b}   // o是個物件，a欄位是3
 
-let {a:x, b:y} = o
+let {a:x, b:y} = o   //a裡頭的x是3
 
 console.log('a=', a, 'b=', b, 'o=', o, 'x=', x, 'y=', y)
 

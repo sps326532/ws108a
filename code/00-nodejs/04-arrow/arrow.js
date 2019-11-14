@@ -1,4 +1,8 @@
-let power2 = (x) => x*x
+//function f(x) {return xxx}
+//let g=f
+//let h = function (x){return xxx }
+
+let power2 = (x) => x*x     
 console.log('power2(3)=', power2(3))
 
 let power3 = (x) => { return x*x*x } // 請注意，一定要加 return, 否則會傳回 undefined

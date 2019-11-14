@@ -5,7 +5,7 @@ const koaLogger = require('koa-logger')
 const app = module.exports = new Koa()
 const router = new KoaRouter()
 
-router.get('/blog/:file', async (ctx) => {         //blog只是單存字串
+router.get('/blog/:file', async (ctx) => {         //blog只是單存字串，
   ctx.body = 'file:' + ctx.params.file            //params是logger產生的參數
 })
 

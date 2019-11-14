@@ -1,6 +1,6 @@
-const http = require('http');
+const http = require('http');   //宣告所需套件
 
-const port = 3000, hostname = 'localhost'
+const port = 3000, hostname = 'localhost' //加上''代表宣告為字串!
 
 const server = http.createServer((request, response) => {
   console.log('url:', request.url);
