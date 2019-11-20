@@ -7,5 +7,5 @@ var server = net.createServer(function(socket) {
   socket.end()
 });
 
-server.listen(3000, '127.0.0.1')
+server.listen(3000, '127.0.0.1')//127.0.0.1代表主機ip(規定好的)
 console.log(`Server running at http://localhost:3000/`);
