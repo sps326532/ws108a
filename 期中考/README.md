@@ -21,6 +21,9 @@
 [02-404](https://github.com/sps326532/ws108a/blob/master/%E6%9C%9F%E4%B8%AD%E8%80%83/02-404/app.js)
 :404就是找不到請求的東西
 
+## 02-httpServer
+[02-httpserver](https://github.com/sps326532/ws108a/tree/master/%E6%9C%9F%E4%B8%AD%E8%80%83/02-httpServer)
+:裡面有httpHtmlServer及httpServer範例加上註解
 ## 04-fileServer
 [04-fileServer](https://github.com/sps326532/ws108a/blob/master/%E6%9C%9F%E4%B8%AD%E8%80%83/04-fileServer/app.js)
 :有在範例加上註解
