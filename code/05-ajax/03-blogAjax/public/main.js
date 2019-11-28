@@ -1,14 +1,20 @@
 var R = {}
-
+//var mdit = window.makdownit()
 window.onhashchange = async function () {
   var r
   var tokens = window.location.hash.split('/')
+  //window.location 代表網址
+  //window.location.hash代表#之後到問號，這邊沒有問號所以#後面全部
+  //token就變成一個儲存標籤後資料的陣列
   console.log('tokens=', tokens)
   switch (tokens[0]) {
     case '#show':
       r = await window.fetch('/post/' + tokens[1])
       let post = await r.json()
       R.show(post)
+      /*let md = await r.text()
+      console.log('md=',md)
+      document.getElementById('main').innerHTNL = mdit.render(md)*/
       break
     case '#new':
       R.new()
@@ -20,7 +26,7 @@ window.onhashchange = async function () {
       break
   }
 }
-
+//window是瀏覽器 透過document操控前端
 window.onload = function () {
   window.onhashchange()
 }
@@ -75,6 +81,8 @@ R.savePost = async function () {
   let body = document.querySelector('#body').value
   let r = await window.fetch('/post', {
     body: JSON.stringify({title: title, body: body}),
+    //JSON.stringify()用來將物件轉為JSON檔案
+    //JSON.parse()用來將JSON檔案轉為物件
     method: 'POST'
   })
   window.location.hash = '#list'

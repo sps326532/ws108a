@@ -4,7 +4,6 @@ const router = require('koa-router')()
 const koaBody = require('koa-body')
 const koaJson = require('koa-json')
 const koaStatic = require('koa-static')
-
 const Koa = require('koa')
 const app = module.exports = new Koa()
 
