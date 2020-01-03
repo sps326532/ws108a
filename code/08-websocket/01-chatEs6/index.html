@@ -7,7 +7,7 @@
       body { font: 13px Helvetica, Arial; }
       form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
       form input { border: 0; padding: 10px; width: 50%; margin-right: .5%; }
-      form button, input[type=submit] { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      form button, input[type=submit] { width: 9%; background: rgb(253, 231, 34); border: none; padding: 10px; }
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
@@ -15,17 +15,17 @@
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="user" type="text" placeholder="user" style="width:100px"/>
-      <input id="msg" placeholder="message" autocomplete="off" />
-      <button id="send">Send</button>
+    <ul id="messages"></ul><!--所有貼文列表都放在這裡-->
+    <form action="">  <!---action示物件，當你按下按鈕的時候-->
+      <input id="user" type="text" placeholder="user" style="width:100px"/> <!--user使用者名稱-->
+      <input id="msg" placeholder="messages" autocomplete="off" /> <!--msg我現在要發的訊息-->
+      <button id="send">Send</button>   <!--按鈕名稱-->
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>  <!--引用了socket.io這個函示庫--->
     <script>
-      var socket = io('http://localhost:3000')
-      var form = document.querySelector('form')
-      var user = document.querySelector('#user')
+      var socket = io('http://localhost:3000')  //先創建一個socket，這叫做插座的意思
+      var form = document.querySelector('form') //表單
+      var user = document.querySelector('#user')//欄位
       var msg  = document.querySelector('#msg')
       var messages  = document.querySelector('#messages')
       var domParser = new DOMParser()
@@ -36,15 +36,15 @@
         return doc.body.firstChild
       }
 
-      form.onsubmit = function() {
+      form.onsubmit = function() {    //form示表單
         let umsg = user.value + ':' + msg.value
-        socket.emit('chat message', umsg)
+        socket.emit('chat message', umsg) //送出訊息，chat message是個事件，送出訊息時會出現使用者姓名及訊息
         console.log('umsg=', umsg)
         msg.value = ''
         return false
       }
 
-      socket.on('chat message', function(msg){
+      socket.on('chat message', function(msg){  
         messages.appendChild(html2node('<li>'+msg+'</li>'))
         window.scrollTo(0, document.body.scrollHeight)
       })

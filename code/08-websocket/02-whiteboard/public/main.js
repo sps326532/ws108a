@@ -21,13 +21,13 @@
     colors[i].addEventListener('click', onColorUpdate, false);
   }
 
-  socket.on('drawing', onDrawingEvent);
+  socket.on('drawing', onDrawingEvent);  //
 
-  window.addEventListener('resize', onResize, false);
+  window.addEventListener('resize', onResize, false);  //resize改變視窗大小
   onResize();
 
 
-  function drawLine(x0, y0, x1, y1, color, emit){
+  function drawLine(x0, y0, x1, y1, color, emit){  
     context.beginPath();
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
